@@ -246,8 +246,8 @@ test('decrypt inflate output length limit', async (t) => {
       .encrypt(new Uint8Array(32))
 
     await t.throwsAsync(flattenedDecrypt(jwe, new Uint8Array(32)), {
-      message: 'decompression operation failed',
-      code: 'ERR_JWE_DECOMPRESSION_FAILED',
+      message: 'Cannot create a Buffer larger than 250000 bytes',
+      code: 'ERR_BUFFER_TOO_LARGE',
     })
   }
 
