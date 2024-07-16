@@ -11,6 +11,17 @@ import validateCrit from '../../lib/validate_crit.ts'
 /**
  * The FlattenedSign class is used to build and sign Flattened JWS objects.
  *
+ * @example Usage
+ *
+ * ```js
+ * const jws = await new jose.FlattenedSign(
+ *   new TextEncoder().encode('It’s a dangerous business, Frodo, going out your door.'),
+ * )
+ *   .setProtectedHeader({ alg: 'ES256' })
+ *   .sign(privateKey)
+ *
+ * console.log(jws)
+ * ```
  */
 export class FlattenedSign {
   private _payload: Uint8Array

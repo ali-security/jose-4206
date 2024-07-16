@@ -74,6 +74,20 @@ class IndividualSignature implements Signature {
 /**
  * The GeneralSign class is used to build and sign General JWS objects.
  *
+ * @example Usage
+ *
+ * ```js
+ * const jws = await new jose.GeneralSign(
+ *   new TextEncoder().encode('It’s a dangerous business, Frodo, going out your door.'),
+ * )
+ *   .addSignature(ecPrivateKey)
+ *   .setProtectedHeader({ alg: 'ES256' })
+ *   .addSignature(rsaPrivateKey)
+ *   .setProtectedHeader({ alg: 'PS256' })
+ *   .sign()
+ *
+ * console.log(jws)
+ * ```
  */
 export class GeneralSign {
   private _payload: Uint8Array
