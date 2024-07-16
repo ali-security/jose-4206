@@ -15,20 +15,6 @@ const check = (value: unknown, description: string) => {
 /**
  * Calculates a base64url-encoded JSON Web Key (JWK) Thumbprint
  *
- * @example Usage
- *
- * ```js
- * const thumbprint = await jose.calculateJwkThumbprint({
- *   kty: 'EC',
- *   crv: 'P-256',
- *   x: 'jJ6Flys3zK9jUhnOHf6G49Dyp5hah6CNP84-gY-n9eo',
- *   y: 'nhI6iD5eFXgBTLt_1p3aip-5VbZeMhxeFSpjfEAf7Ww',
- * })
- *
- * console.log(thumbprint)
- * // 'w9eYdC6_s_tLQ8lH6PUpc0mddazaqtPgeC2IgWDiqY8'
- * ```
- *
  * @param jwk JSON Web Key.
  * @param digestAlgorithm Digest Algorithm to use for calculating the thumbprint. Default is
  *   "sha256".
@@ -84,20 +70,6 @@ export async function calculateJwkThumbprint(
 
 /**
  * Calculates a JSON Web Key (JWK) Thumbprint URI
- *
- * @example Usage
- *
- * ```js
- * const thumbprintUri = await jose.calculateJwkThumbprintUri({
- *   kty: 'EC',
- *   crv: 'P-256',
- *   x: 'jJ6Flys3zK9jUhnOHf6G49Dyp5hah6CNP84-gY-n9eo',
- *   y: 'nhI6iD5eFXgBTLt_1p3aip-5VbZeMhxeFSpjfEAf7Ww',
- * })
- *
- * console.log(thumbprintUri)
- * // 'urn:ietf:params:oauth:jwk-thumbprint:sha-256:w9eYdC6_s_tLQ8lH6PUpc0mddazaqtPgeC2IgWDiqY8'
- * ```
  *
  * @param jwk JSON Web Key.
  * @param digestAlgorithm Digest Algorithm to use for calculating the thumbprint. Default is

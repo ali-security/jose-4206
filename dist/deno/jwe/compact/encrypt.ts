@@ -9,17 +9,6 @@ import type {
 /**
  * The CompactEncrypt class is used to build and encrypt Compact JWE strings.
  *
- * @example Usage
- *
- * ```js
- * const jwe = await new jose.CompactEncrypt(
- *   new TextEncoder().encode('It’s a dangerous business, Frodo, going out your door.'),
- * )
- *   .setProtectedHeader({ alg: 'RSA-OAEP-256', enc: 'A256GCM' })
- *   .encrypt(publicKey)
- *
- * console.log(jwe)
- * ```
  */
 export class CompactEncrypt {
   private _flattened: FlattenedEncrypt
